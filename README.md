@@ -1,2 +1,2 @@
 # python-codebase
-Estutando python.
+Estudando python.
