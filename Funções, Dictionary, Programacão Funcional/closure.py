@@ -1,6 +1,6 @@
 """
 Closure e funcoes que retornam outras funcoes
-Closure uma função que "lembra" o ambiente em que foi criada. Isso significa 
+Closure é uma função que "lembra" o ambiente em que foi criada. Isso significa 
 que a função pode acessar e operar com variáveis que não estão localmente definidas dentro dela 
 mas que estavam no escopo da função que a envolveu quando foi definida.
 """
