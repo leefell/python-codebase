@@ -1,3 +1,5 @@
+import os
+
 perguntas = [
     {
         'Pergunta': 'Quanto é 2+2?',
@@ -16,5 +18,38 @@ perguntas = [
     },
 ]
 
+qtd_acertos = 0
 for pergunta in perguntas:
     print("Pergunta: ", pergunta['Pergunta'])
+    print()
+
+    print("Opções:")
+    opcoes = pergunta['Opções']
+    for i, opcao in enumerate(opcoes):
+        print(f'{i})', opcao)
+    print()
+
+    tentativa = input("Escolha uma opção: ")
+
+    acertou = False
+    tentativa_int = None
+    qtd_opcoes = len(opcoes)
+
+    if tentativa.isdigit():
+        tentativa_int = int(tentativa)
+
+    if tentativa_int is not None:
+        if tentativa_int >= 0 and tentativa_int < qtd_opcoes:
+            if opcoes[tentativa_int] == pergunta['Resposta']:
+                acertou = True
+
+    if acertou:
+        qtd_acertos += 1
+        print("Acertou! :)")
+    else:
+        print("Errou! :(")
+
+    input("Digite ENTER para continuar.")
+    os.system('cls')
+
+print('Voce acertou:', qtd_acertos, 'de', len(perguntas), 'perguntas.')
